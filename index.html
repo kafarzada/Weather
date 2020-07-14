@@ -19,16 +19,20 @@
 
         <div class="row">
             <div class="col">
-                <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Название города</label>
-                  <input type="cityName" class="form-control" id="cityName" aria-describedby="cityName">
-                  <div class="alert alert-danger fade" role="alert" id="warningAlert">
-                    Вы не ввели название города
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submit">Получить</button>
-              </form></div>
+                    <form>
+                    <div class="form-group">
+                        <div class="input-group ">
+                            <input type="text" id="cityName" class="form-control" placeholder="Название города" aria-label="Recipient's username" aria-describedby="button-addon2">
+                              <div class="input-group-append">
+                                <button  class="btn btn-primary" id="submit" type="button" id="button-addon2">Найти</button>
+                              </div>
+                        </div>
+                        <div class="alert alert-danger fade" role="alert" id="warningAlert">
+                            Вы не ввели название города
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="row main">
