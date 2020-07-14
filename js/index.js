@@ -20,7 +20,7 @@ btnSubmit.addEventListener('click', function(event) {
             .then(data => {
                 song.play()
                 const temp = tocelsius(data['main']['temp']);
-                const weatherCard ="<div class='card-body itemcard'><h3 class='card-title'>Город:" + data['name'] + "</h3><h4 class='card-subtitle mb-2 text-muted'>" + getDay(day)+ "</h4> <div class='card-text'><span class='bold'>Температура</span>: " + temp + "С&#176.</div><div class='card-text'><span class='bold'><span class='bold'>Влажность:</span> " + data['main']['humidity'] + "%</div><span class='bold'>Скорость Ветра:</span> " + data['wind']['speed'] + "m/s</div></div>";
+                const weatherCard ="<div class='card-body shadow p-3 m-5 bg-white rounded itemcard'><h3 class='card-title text-center'>" + data['name'] + "</h3><h4 class='card-subtitle mb-2 text-muted'>" + getDay(day)+ "</h4> <div class='card-text'><span class='bold'>Температура</span>: " + temp + "С&#176.</div><div class='card-text'><span class='bold'><span class='bold'>Влажность:</span> " + data['main']['humidity'] + "%</div><span class='bold'>Скорость Ветра:</span> " + data['wind']['speed'] + "m/s</div></div>";
                 mainElem.insertAdjacentHTML('afterbegin', weatherCard)
             })
             .catch(error => console.log(error))
