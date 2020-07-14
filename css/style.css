@@ -1,0 +1,30 @@
+.disabled {
+    display: 'none';
+}
+
+
+.bold {
+    font-weight: 700;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    min-width: 600px;
+}
+
+.itemcard {
+    box-shadow: 0 0 7px 1px rgb(97, 97, 97);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    min-width: 400px;
+}
+main::-webkit-scrollbar { width: 3px; height: 3px;}
+main::-webkit-scrollbar-button {  background-color: #666; }
+main::-webkit-scrollbar-track {  background-color: #999;}
+main::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+main::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+main::-webkit-scrollbar-corner { background-color: #999;}}
+main::-webkit-resizer { background-color: #666;}
