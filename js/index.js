@@ -8,7 +8,7 @@ const song = new Audio('mp3/ring.m4a')
 
 
 
-elemcityname.addEventListener('keypress', function(e) {
+elemcityname.addEventListener('keypress', function() {
     warningAlert.classList.add('fade')
 })
 btnSubmit.addEventListener('click', function(event) {
@@ -19,7 +19,7 @@ btnSubmit.addEventListener('click', function(event) {
             .then(response => response.json())
             .then(data => {
                 song.play()
-                const temp = Math.round(Number(data['main']['temp']) - 273.15);
+                const temp = tocelsius(data['main']['temp']);
                 const weatherCard ="<div class='card-body itemcard'><h3 class='card-title'>Город:" + data['name'] + "</h3><h4 class='card-subtitle mb-2 text-muted'>" + getDay(day)+ "</h4> <div class='card-text'><span class='bold'>Температура</span>: " + temp + "С&#176.</div><div class='card-text'><span class='bold'><span class='bold'>Влажность:</span> " + data['main']['humidity'] + "%</div><span class='bold'>Скорость Ветра:</span> " + data['wind']['speed'] + "m/s</div></div>";
                 mainElem.insertAdjacentHTML('afterbegin', weatherCard)
             })
@@ -32,7 +32,7 @@ btnSubmit.addEventListener('click', function(event) {
 
 
 
-function getDay(day) {
+const getDay = (day) => {
     const days = {
         "1": 'Понедельник',
         "2": 'Вторник',
@@ -45,3 +45,5 @@ function getDay(day) {
 
     return days[day.toString()]
 } 
+
+const tocelsius = (temp) => Math.round(Number(temp) - 273.15);
